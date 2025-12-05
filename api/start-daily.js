@@ -2,8 +2,8 @@ export const config = {
   runtime: "nodejs"
 };
 
-import { sql } from "../lib/db";
-import { startReelCore } from "../lib/core/startReel";
+import { sql } from "../lib/db.js";
+import { startReelCore } from "../lib/core/startReel.js";
 
 export default async function handler() {
   try {
@@ -29,7 +29,6 @@ export default async function handler() {
 
     const event = rows[0];
 
-    // Run the FULL pipeline (script → VO → bg → music → ready)
     const job_id = await startReelCore(
       event.id,
       event.event_date.toISOString().split("T")[0]
