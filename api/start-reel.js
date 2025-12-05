@@ -2,7 +2,7 @@ export const config = {
   runtime: "nodejs"
 };
 
-import { startReelCore } from "../lib/core/startReel";
+import { startReelCore } from "../lib/core/startReel.js";
 
 export default async function handler(req) {
   try {
