@@ -1,0 +1,31 @@
+export const config = {
+  runtime: "nodejs"
+};
+
+import { createJobCore } from "../lib/core/createJob.js";
+
+export default async function handler(req) {
+  try {
+    const { event_id, target_date } = await req.json();
+
+    if (!event_id || !target_date) {
+      return new Response(
+        JSON.stringify({ error: "event_id and target_date required" }),
+        { status: 400 }
+      );
+    }
+
+    const result = await createJobCore(event_id, target_date);
+
+    return new Response(
+      JSON.stringify(result),
+      { status: 200 }
+    );
+
+  } catch (err) {
+    return new Response(
+      JSON.stringify({ error: err.message }),
+      { status: 500 }
+    );
+  }
+}
