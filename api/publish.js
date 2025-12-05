@@ -2,7 +2,7 @@ export const config = {
   runtime: "nodejs"
 };
 
-import { sql } from "../lib/db";
+import { sql } from "../lib/db.js";
 
 export default async function handler(req) {
   try {
