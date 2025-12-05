@@ -1,3 +1,6 @@
-module.exports = (req, res) => {
-  res.status(200).json({ ok: true, message: "debug hit" });
-};
+export default function handler() {
+  return new Response(
+    JSON.stringify({ ok: true, message: "debug hit" }),
+    { status: 200 }
+  );
+}
