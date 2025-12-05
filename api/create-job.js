@@ -17,15 +17,8 @@ export default async function handler(req) {
 
     const result = await createJobCore(event_id, target_date);
 
-    return new Response(
-      JSON.stringify(result),
-      { status: 200 }
-    );
-
+    return new Response(JSON.stringify(result), { status: 200 });
   } catch (err) {
-    return new Response(
-      JSON.stringify({ error: err.message }),
-      { status: 500 }
-    );
+    return new Response(JSON.stringify({ error: err.message }), { status: 500 });
   }
 }
