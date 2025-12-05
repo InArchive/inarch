@@ -2,7 +2,7 @@
   "name": "inarchive",
   "version": "1.0.0",
   "private": true,
-  "type": "commonjs",
+  "type": "module",
   "dependencies": {
     "@neondatabase/serverless": "^0.9.0",
     "node-fetch": "^3.3.2",
@@ -12,3 +12,4 @@
     "@types/node": "20.0.0"
   }
 }
+
